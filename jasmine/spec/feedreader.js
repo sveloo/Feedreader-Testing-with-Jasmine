@@ -73,9 +73,10 @@ $(function() {
             // load the next feed.
             loadFeed(1, function() {
                 secondFeed = $('.feed').html();
+                console.log(secondFeed.length);
                 expect(firstFeed).not.toEqual(secondFeed);
                 // I've console.logged this to show the diferrence in length after the load.
-                console.log(secondFeed.length);
+
             });
         });
     });
