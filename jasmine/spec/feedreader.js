@@ -60,7 +60,7 @@ $(function() {
             secondFeed;
 
         // loads the first feed and calculates its html length. I've console logged this.
-        beforeEach(function(done) {
+        beforeAll(function(done) {
             loadFeed(0, function() {
                 firstFeed = $('.feed').html();
                 console.log(firstFeed.length);
