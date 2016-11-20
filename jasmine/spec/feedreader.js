@@ -60,10 +60,10 @@ $(function() {
             secondFeed;
 
         // loads the first feed and calculates its html length. I've console logged this.
-        beforeAll(function(done) {
+        beforeEach(function(done) {
             loadFeed(0, function() {
-                firstFeed = $('.feed').html();
-                console.log(firstFeed.length);
+                firstFeed = $('.feed').html;
+                console.log($('.feed').find('h2')[0].textContent);
                 done();
             });
         });
@@ -72,13 +72,12 @@ $(function() {
         it('Check if feed content is different', function(done) {
             // load the next feed.
             loadFeed(1, function() {
-                secondFeed = $('.feed').html();
-                console.log(secondFeed.length);
+                secondFeed = $('.feed').html;
+                console.log($('.feed').find('h2')[0].textContent);
                 expect(firstFeed).not.toEqual(secondFeed);
-                // I've console.logged this to show the diferrence in length after the load.
-
+                // call done() to signal the end
+                done();
             });
         });
     });
-
 }());
